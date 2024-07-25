@@ -3,6 +3,8 @@
 ## Links
 - https://code.tutsplus.com/beginners-guide-to-the-django-rest-framework--cms-19786t
 - https://www.django-rest-framework.org/api-guide/permissions/
+- https://docs.djangoproject.com/en/4.2/ref/csrf/
+- https://docs.djangoproject.com/en/dev/topics/templates/#django.template.backends.base.Template.render
 
 ## Commands 1
 - pip install django
