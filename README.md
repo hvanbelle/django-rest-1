@@ -2,6 +2,7 @@
 
 ## Links
 - https://code.tutsplus.com/beginners-guide-to-the-django-rest-framework--cms-19786t
+- https://www.django-rest-framework.org/api-guide/permissions/
 
 ## Commands 1
 - pip install django
