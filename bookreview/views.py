@@ -16,16 +16,18 @@ class AuthorView(ListCreateAPIView):
 
 class AuthorInstanceView(generics.RetrieveAPIView):
     """
-Returns a single author.
-Also allows updating and deleting
-"""
+    Returns a single author.
+    Also allows updating and deleting
+    """
+
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
 
 def index_view(request):
     """
-Ensure the user can only see their own profiles.
-"""
+    Ensure the user can only see their own profiles.
+    """
+
     response = {
         'authors': Author.objects.all(),
         # 'books': Book.objects.all(),

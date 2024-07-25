@@ -3,8 +3,8 @@ from .models import Author,Book
 
 class BookSerializer(serializers.ModelSerializer):
     """
-Serializing all the Books
-"""
+    Serializing all the Books
+    """
     search_url = serializers.SerializerMethodField('get_search_url')
 
     class Meta:
@@ -15,8 +15,8 @@ Serializing all the Books
         return "http://www.isbnsearch.org/isbn/{}".format(obj.isbn)
 class AuthorSerializer(serializers.ModelSerializer):
     """
-Serializing all the Authors
-"""
+    Serializing all the Authors
+    """
     books = BookSerializer(read_only=True, many=True, source="book_set")
 
     class Meta:
