@@ -8,6 +8,16 @@
     {% endfor %}
 </ul>
 
+<h2>Books</h2>
+<ul>
+    {% for book in books %}
+        <li>
+            <!-- this URL is built manually -->
+            <a href="/bookreview/books/{{book.id}}">{{book.title}} {{book.isbn}} {{book.author}}</a>
+        </li>
+    {% endfor %}
+</ul>
+
 <form action="{% url 'author-list' %}" method="post">
     <input type="text" name="first_name" />
     <input type="text" name="last_name" />

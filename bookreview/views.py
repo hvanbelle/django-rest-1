@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.response import Response
-from .models import Author
-from .serializers import AuthorSerializer
+from .models import Author, Book
+from .serializers import AuthorSerializer, BookSerializer
 from rest_framework.generics import ListAPIView, ListCreateAPIView
 
 # Create your views here.
@@ -23,6 +23,20 @@ class AuthorInstanceView(generics.RetrieveAPIView):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
 
+class BookView(ListAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+class BookInstanceView(generics.RetrieveAPIView):
+    """
+    Returns a single author.
+    Also allows updating and deleting
+    """
+
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+
 def index_view(request):
     """
     Ensure the user can only see their own profiles.
@@ -30,6 +44,6 @@ def index_view(request):
 
     response = {
         'authors': Author.objects.all(),
-        # 'books': Book.objects.all(),
+        'books': Book.objects.all(),
     }
     return render(request, 'index.html', response)
