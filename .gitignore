@@ -1,0 +1,3 @@
+/core/.env
+/bookreview/migrations/
+/db.sqlite3
